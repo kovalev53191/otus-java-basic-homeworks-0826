@@ -1,6 +1,9 @@
+package ru.otus.java.basic;
+
 import java.util.Scanner;
 
 public class Lesson05 {
+
     public static void main(String[] args) {
         int[] array = {10, 1, 4, 6, 7, 8};
         Scanner console = new Scanner(System.in);
@@ -11,61 +14,60 @@ public class Lesson05 {
                 int number = console.nextInt();
                 System.out.println("Введите слово: ");
                 String word = console.next();
-                methodOne(number, word);
+                printStringMultiple(number, word);
                 break;
             case 2:
-                methodTwo(array);
+                printSumOfElementsGreaterThanFive(array);
                 break;
             case 3:
                 System.out.println("Введите число: ");
                 int number1 = console.nextInt();
-                methodThree(number1, array);
+                fillArrayWithNumber(number1, array);
                 break;
             case 4:
                 System.out.println("Введите число: ");
                 int number2 = console.nextInt();
-                methodFour(number2, array);
+                addNumberToArray(number2, array);
                 break;
             case 5:
-                methodFive(array);
+                compareAndPrintArrayHalves(array);
                 break;
             default:
                 System.out.println("Ничего не выбрано");
         }
     }
 
-    public static void methodOne(int number, String word) {
+    public static void printStringMultiple(int number, String word) {
         for (int i = 0; i < number; i++) {
             System.out.println(word);
         }
     }
 
-    public static void methodTwo(int[] numbers) {
+    public static void printSumOfElementsGreaterThanFive(int[] array) {
         int sum = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            int number = numbers[i];
-            if (number > 5) {
-                sum += numbers[i];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > 5) {
+                sum += array[i];
             }
         }
         System.out.println(sum);
     }
 
-    public static void methodThree(int number1, int[] array) {
+    public static void fillArrayWithNumber(int number1, int[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] = number1;
             System.out.print(array[i] + " ");
         }
     }
 
-    public static void methodFour(int number2, int[] array) {
+    public static void addNumberToArray(int number2, int[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] += number2;
             System.out.print(array[i] + " ");
         }
     }
 
-    public static void methodFive(int[] array) {
+    public static void compareAndPrintArrayHalves(int[] array) {
         int sumLeft = 0;
         int sumRight = 0;
         for (int i = 0; i < array.length / 2; i++) {
