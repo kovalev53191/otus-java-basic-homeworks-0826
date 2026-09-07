@@ -4,9 +4,8 @@ import java.util.Scanner;
 
 public class Lesson07 {
 
-    private static final int[][] array = {{1, 2, 3}, {-1, 4, 6}, {-7, 8, 9}};
+    private static final int[][] array = {{1, 2, 3}, {-1, 4, 6}, {15, 5, 9}};
     private static final int SIZE = 5;
-    private static final char[][] map = new char[SIZE][SIZE];
     private static final char STAR_EMPTY = '*';
 
     public static void main(String[] args) {
@@ -50,8 +49,7 @@ public class Lesson07 {
     public static void printSquare(int size) {
         for (int x = 0; x < size; x++) {
             for (int y = 0; y < size; y++) {
-                map[x][y] = STAR_EMPTY;
-                System.out.print(map[x][y]);
+                System.out.print(STAR_EMPTY);
             }
             System.out.println();
         }
@@ -82,14 +80,14 @@ public class Lesson07 {
     }
 
     public static void sumSecondRow(int[][] arr) {
-        int max = 0;
-        if (arr[1].length != 0) {
-            for (int x = 1; x < arr.length - 1; x++) {
-                for (int y = 0; y < arr[x].length; y++) {
-                    max += arr[x][y];
-                }
+        int sum = 0;
+        if (arr[1].length > 1) {
+            for (int y = 0; y < arr[1].length; y++) {
+                sum += arr[1][y];
             }
+        } else {
+            sum = -1;
         }
-        System.out.println(max);
+        System.out.println(sum);
     }
 }
