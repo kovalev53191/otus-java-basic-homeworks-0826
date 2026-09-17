@@ -81,7 +81,7 @@ public class Lesson07 {
 
     public static void sumSecondRow(int[][] arr) {
         int sum = 0;
-        if (arr[1].length > 1) {
+        if (arr.length > 1) {
             for (int y = 0; y < arr[1].length; y++) {
                 sum += arr[1][y];
             }
