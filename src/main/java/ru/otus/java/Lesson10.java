@@ -72,16 +72,7 @@ public class Lesson10 {
             case 1:
                 System.out.println("Напишите 'Открыть' или 'Закрыть' коробку");
                 String boxOpen = scanner.next();
-                if (boxOpen.equals("Открыть")) {
-                    myBox.setBoxStatus(true);
-                    System.out.println("Вы открыли коробку");
-
-                } else if (boxOpen.equals("Закрыть")) {
-                    myBox.setBoxStatus(false);
-                    System.out.println("Вы закрыли коробку");
-                } else {
-                    System.out.println("Неверное действие");
-                }
+                myBox.open(boxOpen);
                 break;
             case 2:
                 System.out.println("Напишите какой будет цвет у коробки");
@@ -95,32 +86,7 @@ public class Lesson10 {
             case 4:
                 System.out.println("Напишите 'Положить' или 'Убрать' предмет из коробки");
                 String putItem = scanner.next();
-                if (myBox.getBoxStatus() == true) {
-                    if (putItem.equals("Положить")) {
-                        if (myBox.getItem() == null) {
-                            System.out.println("Введите название предмета");
-                            String itemName = scanner.next();
-                            myBox.setItem(itemName);
-                            System.out.println("Вы положили "  + itemName + " в коробку");
-                        } else {
-                            System.out.println("Коробка уже заполнена");
-                        }
-                    }
-                    else if (putItem.equals("Убрать")) {
-                        if (myBox.getItem() != null) {
-                            String deleteItem = myBox.getItem();
-                            System.out.println("Вы убрали " + deleteItem + " из коробки");
-                            myBox.setItem(null);
-                        } else {
-                            System.out.println("Вы пытаетесь убрать предмет, которого нет");
-                        }
-                    }
-                    else {
-                        System.out.println("Пишите 'Положить' или 'Убрать'");
-                    }
-                } else {
-                    System.out.println("Вы забыли открыть коробку");
-                }
+                myBox.put("Мячик", putItem);
                 break;
         }
     }
